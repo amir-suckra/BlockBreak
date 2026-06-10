@@ -1,5 +1,5 @@
 🛠️ Gameplay & Mechanics
-Adjust paddle speed: Increase the moving speed of the bottom paddle so it feels more responsive.
+Adjust paddle speed: Increase the moving speed of the bottom paddle so it feels more responsive. (Finished)
 Fix bouncing and collision bugs: * Investigate and fix instances where the ball/orb "phases through" blocks or asteroids without bouncing off them.
 Ensure that when a block is destroyed, a neighboring block doesn't accidentally disappear without being hit.
 Refine hitboxes: Precise up the hitboxes of the rectangles/blocks to make sure they match the visual assets exactly.
