@@ -11,5 +11,5 @@ Implement progressive difficulty: Design the levels to get progressively harder 
 Introduce power-ups and special items: Add unique elements to gameplay, such as different types of balls or special drops.
 🎨 Visuals & Graphics
 Upgrade image assets: Enhance the overall graphics, images, and visual design of the game blocks and background.
-Fix text/UI readability: One user rated the screen readability as a 3; double-check contrast and text sizing so everything on screen is perfectly clear
+Fix text/UI readability: One user rated the screen readability as a 3; double-check contrast and text sizing so everything on screen is perfectly clear(Finished)
 
