@@ -3,9 +3,9 @@ let state = "start";
 let score = 0;
 let lives = 3;
 //Ball object with postion, speed, and radius
-let ball = { x: 400, y: 350, speedx: 4, speedy: -4, r: 10 };
+let ball = { x: 400, y: 350, speedx: 7, speedy: -7, r: 10 };
 //Paddle object with postion, size, and movement speed
-let paddle = { x: 300, y: 460, w: 120, h: 14, speed: 5 };
+let paddle = { x: 300, y: 460, w: 120, h: 14, speed: 8 };
 
 //List that stores all of the block objects *filled in creatBlocks function
 let blocks =[];
@@ -169,8 +169,8 @@ if (remainingBlocks === 0) {
     // Reset ball
     ball.x = 400;
     ball.y = 350;
-    ball.speedx = 4;
-    ball.speedy = -4;
+    ball.speedx = 7;
+    ball.speedy = -7;
 
     if (lives <= 0) {
       state = "end";
@@ -235,8 +235,8 @@ function resetGame() {
 
   ball.x = 400;
   ball.y = 350;
-  ball.speedx = 4;
-  ball.speedy = -4;
+  ball.speedx = 7;
+  ball.speedy = -7;
 
   createBlocks(); // reset blocks
 }
