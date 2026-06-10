@@ -38,24 +38,33 @@ function createBlocks() {
 //Required Procedure
 //Loops through blocks, check collisions, removes blocks, and updates score
 
-function BlocksAndScore(pointsPerBlock){
-   for (let i = 0; i < blocks.length; i++) {
+function BlocksAndScore(pointsPerBlock) {
+  for (let i = 0; i < blocks.length; i++) {
     let b = blocks[i];
 
     if (b.visible) {
       fill(255, 150, 0);
       rect(b.x, b.y, b.w, b.h);
 
-      // Collision with ball
+      //Calculate the ball's edges for cleaner detection
+      let ballLeft = ball.x - ball.r;
+      let ballRight = ball.x + ball.r;
+      let ballTop = ball.y - ball.r;
+      let ballBottom = ball.y + ball.r;
+
+      //Check if the ball overlaps with the block's rectangle
       if (
-        ball.x + ball.r> b.x &&
-        ball.x + ball.r< b.x + b.w &&
-        ball.y + ball.r> b.y &&
-        ball.y + ball.r < b.y + b.h
+        ballRight > b.x &&          
+        ballLeft < b.x + b.w &&       
+        ballBottom > b.y &&          
+        ballTop < b.y + b.h    
       ) {
         b.visible = false;
-        ball.speedy *= -1;
+        ball.speedy *= -1;            // Bounce the ball vertically
         score += pointsPerBlock;
+        
+        // Break out of the loop so it only hits one block per frame
+        break; 
       }
     }
   }
@@ -127,7 +136,7 @@ function startScreen() {
 
 //Main Game Logic
 function gameScreen() {
-  background(61, 117, 145);
+  background(20, 30, 45);
   
   //move the paddle
   movePaddle();
@@ -153,7 +162,8 @@ function gameScreen() {
   
   //Score and Lives
   fill(255);
-  textSize(20);
+  textSize(30);
+  textFont("Courier New");
   text("Score:" + score, 70,30);
   text("Lives:"+lives, 700,30);
   
