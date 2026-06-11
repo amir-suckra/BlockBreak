@@ -84,15 +84,23 @@ function checkWallBounce() {
 
 //Checks if ball hits the paddle
 function checkPaddleBounce() {
+  // Calculate the ball's edges
+  let ballLeft = ball.x - ball.r;
+  let ballRight = ball.x + ball.r;
+  let ballTop = ball.y - ball.r;
+  let ballBottom = ball.y + ball.r;
+
+  // Check if the ball overlaps with the paddle's rectangle
   if (
-    ball.y + ball.r >= paddle.y &&   // bottom of ball hits top of paddle
-    ball.y < paddle.y &&             // ball is above paddle
-    ball.x > paddle.x &&             
-    ball.x < paddle.x + paddle.w
+    ballRight > paddle.x &&            // Ball's right edge passes paddle's left edge
+    ballLeft < paddle.x + paddle.w &&   // Ball's left edge is before paddle's right edge
+    ballBottom > paddle.y &&           // Ball's bottom edge passes paddle's top edge
+    ballTop < paddle.y + paddle.h      // Ball's top edge is before paddle's bottom edge
   ) {
-    //This code was generated using ChatGPT to move ball above paddle (prevents sticking)
+    // Prevent the ball from getting stuck inside the paddle
     ball.y = paddle.y - ball.r;
 
+    // Reverse vertical direction
     ball.speedy *= -1;
   }
 }
@@ -163,7 +171,7 @@ function gameScreen() {
   //Score and Lives
   fill(255);
   textSize(30);
-  textFont("Courier New");
+  
   text("Score:" + score, 70,30);
   text("Lives:"+lives, 700,30);
   
