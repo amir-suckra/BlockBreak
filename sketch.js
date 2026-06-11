@@ -130,6 +130,7 @@ function startScreen() {
   background(0);
 
   textAlign(CENTER);
+  textStyle(NORMAL);
   fill(255);
   textSize(60);
   textStyle(BOLD);
