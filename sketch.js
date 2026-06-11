@@ -5,7 +5,7 @@ let lives = 3;
 //Ball object with postion, speed, and radius
 let ball = { x: 400, y: 350, speedx: 7, speedy: -7, r: 10 };
 //Paddle object with postion, size, and movement speed
-let paddle = { x: 300, y: 460, w: 120, h: 14, speed: 8 };
+let paddle = { x: 300, y: 460, w: 120, h: 14, speed: 10 };
 
 //List that stores all of the block objects *filled in creatBlocks function
 let blocks =[];
@@ -172,7 +172,6 @@ function gameScreen() {
   //Score and Lives
   fill(255);
   textSize(30);
-  
   text("Score:" + score, 70,30);
   text("Lives:"+lives, 700,30);
   
